@@ -1,0 +1,58 @@
+{
+  "name": "Trading Terminal TradeFi",
+  "short_name": "TradeFi",
+  "description": "Advanced cryptocurrency trading terminal with real-time market data, portfolio management, and trading tools",
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["standalone"],
+  "background_color": "#ffffff",
+  "theme_color": "#fb923c",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "business", "trading"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Markets",
+      "short_name": "Markets",
+      "description": "View cryptocurrency markets",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/icons/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Trading",
+      "short_name": "Trade",
+      "description": "Start trading cryptocurrencies",
+      "url": "/trade",
+      "icons": [
+        {
+          "src": "/icons/icon.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

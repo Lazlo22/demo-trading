@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://demo-trade.app/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Allow all trading and market related content
+Allow: /
+Allow: /trade
+
+# Disallow user-specific pages from indexing
+Disallow: /profile
