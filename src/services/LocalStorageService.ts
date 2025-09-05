@@ -1,7 +1,7 @@
 import { ELocalStorageKeys } from "@constants/localStorage";
 import { ETheme } from "@constants/theme";
 
-class LocalStorageStore {
+class LocalStorageService {
   static getItem<T = string>(key: ELocalStorageKeys): T | null {
     try {
       const item = localStorage.getItem(key);
@@ -48,7 +48,7 @@ class LocalStorageStore {
   static isAvailable(): boolean {
     try {
       const test = "__localStorage_test__";
-      
+
       localStorage.setItem(test, test);
       localStorage.removeItem(test);
       return true;
@@ -59,6 +59,6 @@ class LocalStorageStore {
 }
 
 export const themeStorage = {
-  get: () => LocalStorageStore.getItem<ETheme>(ELocalStorageKeys.Theme) || ETheme.Light,
-  set: (theme: string) => LocalStorageStore.setItem(ELocalStorageKeys.Theme, theme),
+  get: () => LocalStorageService.getItem<ETheme>(ELocalStorageKeys.Theme) || ETheme.Light,
+  set: (theme: string) => LocalStorageService.setItem(ELocalStorageKeys.Theme, theme),
 };

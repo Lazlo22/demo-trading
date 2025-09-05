@@ -1,7 +1,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useState, type FC, type PropsWithChildren } from 'react';
 
-import { themeStorage } from '@stores/LocalStorageStore';
+import { themeStorage } from '@services/LocalStorageService';
 import { ETheme } from '@constants/theme';
 
 interface ThemeContextType {
