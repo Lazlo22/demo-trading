@@ -59,6 +59,6 @@ class LocalStorageStore {
 }
 
 export const themeStorage = {
-  get: () => LocalStorageStore.getItem<ETheme>(ELocalStorageKeys.Theme) || ETheme.Dark,
+  get: () => LocalStorageStore.getItem<ETheme>(ELocalStorageKeys.Theme) || ETheme.Light,
   set: (theme: string) => LocalStorageStore.setItem(ELocalStorageKeys.Theme, theme),
 };

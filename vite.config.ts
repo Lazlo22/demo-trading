@@ -18,6 +18,7 @@ export default defineConfig({
       "@hooks": path.resolve(__dirname, "./src/hooks"),
       "@layout": path.resolve(__dirname, "./src/layout"),
       "@ui": path.resolve(__dirname, "./src/components/ui"),
+      "@types": path.resolve(__dirname, "./src/types"),
     },
   },
   server: {

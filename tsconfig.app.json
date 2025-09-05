@@ -28,6 +28,7 @@
       "@hooks/*": ["./src/hooks/*"],
       "@layout/*": ["./src/layout/*"],
       "@ui/*": ["./src/components/ui/*"],
+      "@types/*": ["./src/types/*"],
     },
   },
   "include": ["src"]

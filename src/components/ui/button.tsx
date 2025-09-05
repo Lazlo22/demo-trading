@@ -13,7 +13,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const getButtonClasses = (variant: ButtonVariant = "default", size: ButtonSize = "default") => {
-  const baseClasses = "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-95 hover:scale-105 shadow-button";
+  const baseClasses = "inline-flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap rounded text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-95 hover:scale-105 shadow-button";
   
   const variantClasses = {
     default: "bg-primary-500 text-white hover:bg-primary-600",
@@ -36,7 +36,7 @@ const getButtonClasses = (variant: ButtonVariant = "default", size: ButtonSize =
 
 const Button = memo(forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", asChild = false, type = "button", ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
+    const Comp = asChild ? Slot.Slot : "button";
     return (
       <Comp 
         className={cn(getButtonClasses(variant, size), className)} 
