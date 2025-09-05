@@ -1,7 +1,12 @@
-#root {
-  background-color: #ffffff;
-  max-width: 1280px;
+html, body {
   min-height: 100vh;
+  background-color: #ffffff;
+  min-width: 100vw;
+}
+
+#root {
+  max-width: 1280px;
+  min-height: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;

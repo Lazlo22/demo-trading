@@ -1,5 +1,10 @@
+export enum RouterRoutesNames {
+    Home = "",
+    Trade = "trade",
+}
+
 export enum RouterRoutes {
     Home = "/",
-    Trade = "/trade",
+    Trade = "/" + RouterRoutesNames.Trade,
     NotFound = "*",
 }
