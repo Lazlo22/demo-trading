@@ -1,4 +1,5 @@
 import { type FC, lazy, Suspense, useState } from "react";
+import { toast } from "react-toastify";
 import VirtualList from "rc-virtual-list";
 
 import { usePositionsStore } from "@/stores/PositionsStore";
@@ -26,11 +27,15 @@ const PositionsList: FC<PositionsListProps> = ({ positions }) => {
     if (!confirmPosition) return;
 
     try {
+      const positionType = confirmPosition.type === 'buy' ? 'Long' : 'Short';
+      
       removePosition(confirmPosition.id);
+      toast.success(`${positionType} position closed successfully!`);
       setIsConfirmOpen(false);
       setConfirmPosition(null);
     } catch (error) {
       console.error("Failed to close position:", error);
+      toast.error("Failed to close position. Please try again.");
     }
   };
 
