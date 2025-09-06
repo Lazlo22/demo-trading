@@ -34,10 +34,12 @@ export const MobileNavigation: FC<MobileNavigationProps> = ({ isOpen, onClose })
                 key={key}
                 onClick={() => handleNavigationClick(label)}
                 variant={activeTab === label ? "default" : "ghost"}
-                className={cn("w-full justify-start cursor-pointer font-medium", {
-                  "bg-primary-500 text-white": activeTab === label,
-                  "text-text-secondary hover:text-text-primary hover:bg-background-hover": activeTab !== label,
-                })}
+                className={cn(
+                  "w-full justify-start cursor-pointer font-medium",
+                  activeTab === label
+                    ? "bg-primary-500 text-white"
+                    : "text-text-secondary hover:text-text-primary hover:bg-background-hover"
+                )}
               >
                 <span>{title}</span>
               </Button>

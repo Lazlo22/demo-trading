@@ -1,4 +1,4 @@
-import { type FC, lazy, Suspense, useState } from "react";
+import { type FC, lazy, Suspense, useState, useTransition } from "react";
 import { toast } from "react-toastify";
 
 import type { OrderMode, OrderType, Order } from "@/types/trade";
@@ -15,6 +15,7 @@ const PlaceOrder: FC = () => {
   const [amount, setAmount] = useState<string>("");
   const [price, setPrice] = useState<string>("");
   const [showConfirmDialog, setShowConfirmDialog] = useState<boolean>(false);
+  const [_, startTransition] = useTransition();
 
   const addPosition = usePositionsStore((state) => state.addPosition);
 
@@ -105,20 +106,6 @@ const PlaceOrder: FC = () => {
             Limit
           </Button>
         </div>
-        {isLimitOrder && (
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Price (USDT)
-            </label>
-            <Input
-              type="number"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              placeholder="0.00"
-              disabled={!isLimitOrder}
-            />
-          </div>
-        )}
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Amount (BTC)
@@ -126,8 +113,8 @@ const PlaceOrder: FC = () => {
           <Input 
             type="number" 
             value={amount} 
-            onChange={(e) => setAmount(e.target.value)} 
-            placeholder="0.00" 
+            onChange={(e) => startTransition(() => setAmount(e.target.value))} 
+            placeholder="0.00"
           />
         </div>
         <Button

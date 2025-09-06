@@ -51,7 +51,7 @@ const PositionsList: FC<PositionsListProps> = ({ positions }) => {
           <div className="text-sm font-medium text-gray-600 dark:text-gray-400 text-center">Actions</div>
         </div>
         <div className="overflow-auto">
-          <VirtualList fullHeight={false} data={positions} height={400} itemHeight={60} itemKey="id">
+          <VirtualList fullHeight={false} data={positions} height={400} itemHeight={60} itemKey={(position) => `position-${position.id}`}>
             {(position) => <PositionRow position={position} handleClosePositionClick={handleClosePositionClick} />}
           </VirtualList>
         </div>

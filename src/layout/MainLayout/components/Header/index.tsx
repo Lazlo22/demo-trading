@@ -40,10 +40,9 @@ export const Header = memo(() => {
                     onClick={() => handleNavigation(label)}
                     className={cn(
                       "cursor-pointer font-medium border-none gap-2 px-4 py-2 transition-all duration-150 hover:scale-105 active:scale-95",
-                      {
-                        "bg-primary-500 text-white": activeTab === label,
-                        "text-text-secondary hover:text-text-primary hover:bg-nav-hover": activeTab !== label,
-                      }
+                      activeTab === label
+                        ? "bg-primary-500 text-white"
+                        : "text-text-secondary hover:text-text-primary hover:bg-nav-hover"
                     )}
                     aria-current={activeTab === label ? "page" : undefined}
                   >
