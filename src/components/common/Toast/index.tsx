@@ -16,6 +16,7 @@ const Toast: FC = () => {
       closeOnClick
       draggable
       theme={theme}
+      data-testid="toast-container"
     />
   )
 };

@@ -11,7 +11,7 @@ const Home: FC = () => {
   if (error) return <HomeError />;
 
   return (
-    <div className="p-6">
+    <div className="p-6" data-testid="home-page">
       <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
         Markets
       </h1>
