@@ -10,14 +10,16 @@ interface MarketslistProps {
 
 const Marketslist: FC<MarketslistProps> = ({ markets }) => {
   return (
-    <VirtualList
-        data={markets}
-        height={600}
-        itemHeight={60}
-        itemKey={(i) => i.id}
-    >
-        {(item) => <MarketslistRow item={item} />}
-    </VirtualList>
+    <div className="bg-white dark:bg-slate-800/50 rounded-lg border border-gray-200 dark:border-slate-700/50 overflow-hidden">
+      <VirtualList
+          data={markets}
+          height={600}
+          itemHeight={60}
+          itemKey={(i) => i.id}
+      >
+          {(item) => <MarketslistRow item={item} />}
+      </VirtualList>
+    </div>
   )
 }
 

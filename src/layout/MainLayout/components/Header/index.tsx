@@ -4,6 +4,7 @@ import { Menu } from "lucide-react";
 import { useNavigation } from "@hooks/useNavigation";
 import { useNavigationStore } from "@stores/NavigationStore";
 import { Button } from "@ui/button";
+import { ThemeToggle } from "./components/ThemeToggle";
 import { MobileNavigation } from "./components/MobileNavigation";
 import { cn } from "@utils/styles";
 import { Menubar, MenubarMenu, MenubarTrigger } from "@ui/menubar";
@@ -52,6 +53,9 @@ export const Header = memo(() => {
               ))}
             </Menubar>
           </nav>
+        </div>
+        <div className="flex items-center">
+          <ThemeToggle />
         </div>
       </header>
       <MobileNavigation isOpen={isMobileNavOpen} onClose={() => setIsMobileNavOpen(false)} />

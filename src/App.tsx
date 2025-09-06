@@ -7,17 +7,15 @@ import { GlobalLoader } from "@components/common/GlobalLoader";
 import { ErrorBoundary } from "@components/common/ErrorBoundary";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { WebSocketProvider } from "@/contexts/WebSocketContext";
-import { TOAST_DELAY } from "@constants/toast";
 import { QUERY_GC_TIME, QUERY_STALE_TIME } from "@constants/query";
 
-import './App.css'
-import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 
 const MainLayout = lazy(() => import("@layout/MainLayout"));
 const Home = lazy(() => import("@pages/Home"));
 const Trade = lazy(() => import("@pages/Trade"));
 const NotFound = lazy(() => import("@pages/NotFound"));
-const ToastContainer = lazy(() => import("react-toastify").then(i => ({ default: i.ToastContainer })));
+const ToastContainer = lazy(() => import("@components/common/Toast"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,12 +45,7 @@ function App() {
             </WebSocketProvider>
           </BrowserRouter>
           <Suspense>
-            <ToastContainer
-              position="top-center"
-              autoClose={TOAST_DELAY}
-              closeOnClick
-              draggable
-            />
+            <ToastContainer />
           </Suspense>
         </ThemeProvider>
       </QueryClientProvider>
